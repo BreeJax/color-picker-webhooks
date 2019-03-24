@@ -20,14 +20,7 @@ class App extends Component {
       let everChangingHSLA = `hsla(${this.state.Hue}, ${this.state.Saturation}%, ${this.state.Light}%, ${this.state.Alpha})`
          this.setState({ MainColor: everChangingHSLA })
     }
-  //   const getHSL = () => {
-  //     return `hsla(${hue}, ${sat}%, ${light}%, ${alpha})`
-  //   }
-  //
-  //   updateTeam2ScoreSubtract = () => {
-  // let newScoreNeg2 = this.state.team2Score - 1
-  // this.setState({ team2Score: newScoreNeg2 })
- // }
+
 
   render() {
     return (
