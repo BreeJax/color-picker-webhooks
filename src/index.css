@@ -14,3 +14,28 @@ code {
 body {
   background-image: linear-gradient(to right, #ff6961, #ffb347, #fdfd96, #77dd77, #aec6cf, #b19cd9, #9966cc);
 }
+.App{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+/* div {
+  width
+} */
+div.MainColorBox {
+  border: 0.5em solid black;
+  width: 16em;
+  height: 16em;
+  margin-right: 0;
+  background-image: url("https://i.pinimg.com/originals/52/71/06/527106421a75533b10d4e25741e68334.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+div.Slider{
+  width: 16em;
+}
+input{
+  width: 100%;
+}
