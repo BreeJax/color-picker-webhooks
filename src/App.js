@@ -28,13 +28,17 @@ class App extends Component {
         <h1>TASTE THE RAINBOW</h1>
         <MainColor />
         <h2 onClick={this.getHSLA}>  {this.state.MainColor} </h2>
-        <Slider title="Hue"/>
-        <Slider title="Saturation"/>
-        <Slider title="Light"/>
-        <Slider title="Alpha"/>
+        <form>
+          <Slider title="Hue" min="1" max="300" value="261"/>
+          <Slider title="Saturation" min="1" max="100" value="55"/>
+          <Slider title="Light" min="1" max="100" value="77" />
+          <Slider title="Alpha" min="0" max="1" value="0.3" />
+        </form>
       </div>
     )
   }
 }
+
+
 
 export default App
