@@ -50,13 +50,13 @@ class App extends Component {
         <button onClick={this.random}>random!</button>
         <form>
           <p>HUE</p>
-          <Slider title="Hue" min="1" max="300" value="261"/>
+          <Slider title="Hue" min="1" max="300" value={this.state.Hue}/>
           <p>SATURATION</p>
-          <Slider title="Saturation" min="1" max="100" value="55"/>
+          <Slider title="Saturation" min="1" max="100" value={this.state.Saturation}/>
           <p>LIGHT</p>
-          <Slider title="Light" min="1" max="100" value="77" />
+          <Slider title="Light" min="1" max="100" value={this.state.Light} />
           <p>ALPHA</p>
-          <Slider title="Alpha" min="0" max="1" value={this.state.Saturation} special="alphaImage"/>
+          <Slider title="Alpha" min="0" max="1" value={this.state.Alpha} special="alphaImage"/>
         </form>
       </div>
     )
