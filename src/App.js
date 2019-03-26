@@ -14,6 +14,7 @@ class App extends Component {
       MainColor: `hsla(262, 100%, 90%, 0.75)`
     }
   }
+
   random = () => {
     function getRandomInt(max) {
       return Math.floor(Math.random() * Math.floor(max));
@@ -23,23 +24,37 @@ class App extends Component {
     let l = getRandomInt(100);
     let a = Math.random().toFixed(2);
       this.setState({Hue: h, Saturation: s, Light: l, Alpha:a});
-    let updateEverChangingHSLA = `hsla(${this.state.Hue}, ${this.state.Saturation}%, ${this.state.Light}%, ${this.state.Alpha})`
-         this.setState({ MainColor: updateEverChangingHSLA })
+      this.getHSLA()
   }
     getHSLA = () => {
       let everChangingHSLA = `hsla(${this.state.Hue}, ${this.state.Saturation}%, ${this.state.Light}%, ${this.state.Alpha})`
          this.setState({ MainColor: everChangingHSLA })
+
     }
 
-    getSaturation = () => {
-      let newSaturation = ""
-    }
-  // satInput.addEventListener('input', () => {
-  //   sat = satInput.value
-  //   console.log(getHSL())
-  //   colorChange()
-  // })
+  updateHue = (value) => {
+      this.setState({Hue: value})
+    this.getHSLA()
 
+  }
+
+  updateSaturation = (value) => {
+      this.setState({Saturation: value})
+    this.getHSLA()
+
+  }
+
+  updateLight = (value) => {
+      this.setState({Light: value})
+    this.getHSLA()
+
+  }
+
+  updateAlpha = (value) => {
+      this.setState({Alpha: value})
+    this.getHSLA()
+
+  }
 
   render() {
     return (
@@ -50,13 +65,13 @@ class App extends Component {
         <button onClick={this.random}>random!</button>
         <form>
           <p>HUE</p>
-          <Slider title="Hue" min="1" max="300" value={this.state.Hue}/>
+          <Slider title="Hue" min="1" max="300" value={this.state.Hue} handleChange={(value) => this.updateHue(value) }/>
           <p>SATURATION</p>
-          <Slider title="Saturation" min="1" max="100" value={this.state.Saturation}/>
+          <Slider title="Saturation" min="1" max="100" value={this.state.Saturation} handleChange={(value) => this.updateSaturation(value) }/>
           <p>LIGHT</p>
-          <Slider title="Light" min="1" max="100" value={this.state.Light} />
+          <Slider title="Light" min="1" max="100" value={this.state.Light} handleChange={(value) => this.updateLight(value) }/>
           <p>ALPHA</p>
-          <Slider title="Alpha" min="0" max="1" value={this.state.Alpha} special="alphaImage"/>
+          <Slider title="Alpha" min="0" max="1" value={this.state.Alpha} step="0.01" special="alphaImage" handleChange={(value) => this.updateAlpha(value) }/>
         </form>
       </div>
     )
