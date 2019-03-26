@@ -65,11 +65,11 @@ class App extends Component {
         <button onClick={this.random}>random!</button>
         <form>
           <p>HUE</p>
-          <Slider title="Hue" min="1" max="300" value={this.state.Hue} handleChange={(value) => this.updateHue(value) }/>
+          <Slider title="Hue" min="0" max="300" value={this.state.Hue} step="1" handleChange={(value) => this.updateHue(value) }/>
           <p>SATURATION</p>
-          <Slider title="Saturation" min="1" max="100" value={this.state.Saturation} handleChange={(value) => this.updateSaturation(value) }/>
+          <Slider title="Saturation" min="0" max="100" value={this.state.Saturation} step="1" handleChange={(value) => this.updateSaturation(value) }/>
           <p>LIGHT</p>
-          <Slider title="Light" min="1" max="100" value={this.state.Light} handleChange={(value) => this.updateLight(value) }/>
+          <Slider title="Light" min="0" max="100" value={this.state.Light} step="1" handleChange={(value) => this.updateLight(value) }/>
           <p>ALPHA</p>
           <Slider title="Alpha" min="0" max="1" value={this.state.Alpha} step="0.01" special="alphaImage" handleChange={(value) => this.updateAlpha(value) }/>
         </form>
