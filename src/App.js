@@ -3,6 +3,15 @@ import "./App.css"
 import MainColor from "./Components/MainColor"
 import Slider from "./Components/Slider"
 
+const getRandomInt = (max) => {
+ return Math.floor(Math.random() * Math.floor(max));
+}
+const h = getRandomInt(300);
+const s = getRandomInt(100);
+const l = getRandomInt(100);
+const a = Math.random().toFixed(2);
+
+
 class App extends Component {
   constructor(props) {
     super(props)
@@ -16,13 +25,6 @@ class App extends Component {
   }
 
   random = () => {
-    function getRandomInt(max) {
-      return Math.floor(Math.random() * Math.floor(max));
-    }
-    let h = getRandomInt(300);
-    let s = getRandomInt(100);
-    let l = getRandomInt(100);
-    let a = Math.random().toFixed(2);
       this.setState({Hue: h, Saturation: s, Light: l, Alpha:a});
       this.getHSLA()
   }
@@ -35,7 +37,6 @@ class App extends Component {
   updateHue = (value) => {
       this.setState({Hue: value})
     this.getHSLA()
-
   }
 
   updateSaturation = (value) => {
